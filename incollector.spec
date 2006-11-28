@@ -6,7 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	ab7fa9bf12aecf2e10d50ccba96940ca
+# Source0-md5:	79bd9a73a0bf7fbfab87517a13f2a2d2
 Source1:	%{name}.desktop
 URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
@@ -52,6 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/*
-%{_desktopdir}/*
+%{_libdir}/incollector
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
