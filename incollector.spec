@@ -1,5 +1,5 @@
 Summary:	Information collector
-Summary(pl):	Program do zbierania informacji
+Summary(pl.UTF-8):   Program do zbierania informacji
 Name:		incollector
 Version:	0.5
 Release:	1
@@ -21,11 +21,11 @@ conversation logs, quotes, serial numbers, source code, webaddresses,
 words). All entries can be tagged. Application can also search and
 browse entries easly.
 
-%description -l pl
-Aplikacja do zbierania ró¿nego rodzaju informacji (jak notatki, logi
-rozmów, cytaty, numery seryjne, kody ¼ród³owe, adresy w sieci, s³owa).
-Wszystkie wpisy mog± byæ znakowane. Program mo¿e wyszukiwaæ i ³atwo
-przegl±daæ wpisy.
+%description -l pl.UTF-8
+Aplikacja do zbierania rÃ³Å¼nego rodzaju informacji (jak notatki, logi
+rozmÃ³w, cytaty, numery seryjne, kody ÅºrÃ³dÅ‚owe, adresy w sieci, sÅ‚owa).
+Wszystkie wpisy mogÄ… byÄ‡ znakowane. Program moÅ¼e wyszukiwaÄ‡ i Å‚atwo
+przeglÄ…daÄ‡ wpisy.
 
 %prep
 %setup -q
