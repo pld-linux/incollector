@@ -1,5 +1,5 @@
 Summary:	Information collector
-Summary(pl.UTF-8):   Program do zbierania informacji
+Summary(pl.UTF-8):	Program do zbierania informacji
 Name:		incollector
 Version:	0.5
 Release:	1
