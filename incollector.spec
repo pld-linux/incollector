@@ -1,18 +1,19 @@
 Summary:	Information collector
 Summary(pl.UTF-8):	Program do zbierania informacji
 Name:		incollector
-Version:	0.5
+Version:	0.6.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	79bd9a73a0bf7fbfab87517a13f2a2d2
-Source1:	%{name}.desktop
+# Source0-md5:	3a85071b03b625ffb25feb46bf4cc7a9
+#Source1:	%{name}.desktop
 URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gtk-sharp2-devel
 BuildRequires:	mono-csharp
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,6 +30,8 @@ przeglądać wpisy.
 
 %prep
 %setup -q
+%{__perl} -pi -e 's#> Engine/Defines.cs \\#> Engine/Defines.cs#' src/Makefile.am
+%{__perl} -pi -e "s/lib/%{_lib}/" script.in
 
 %build
 %{__aclocal}
@@ -43,12 +46,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang incollector
+#%%find_lang incollector
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%files -f incollector.lang
+#%files -f incollector.lang
+%files
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_bindir}/*
