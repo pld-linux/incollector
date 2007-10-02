@@ -6,13 +6,14 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	3a85071b03b625ffb25feb46bf4cc7a9
+# Source0-md5:	37b0540f5b8f05106f6599fd146465d9
 #Source1:	%{name}.desktop
 URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gtk-sharp2-devel
 BuildRequires:	mono-csharp
+BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,12 +47,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#%%find_lang incollector
+%find_lang incollector
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-#%files -f incollector.lang
-%files
+
+%files -f incollector.lang
 %defattr(644,root,root,755)
 %doc AUTHORS README
 %attr(755,root,root) %{_bindir}/*
