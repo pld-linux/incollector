@@ -1,12 +1,12 @@
 Summary:	Information collector
 Summary(pl.UTF-8):	Program do zbierania informacji
 Name:		incollector
-Version:	0.6.1
+Version:	1.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	37b0540f5b8f05106f6599fd146465d9
+# Source0-md5:	da510a279ebb5e8ebf9dbdcb2fc1cf18
 #Source1:	%{name}.desktop
 URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
@@ -16,6 +16,9 @@ BuildRequires:	mono-csharp
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Requires: 	mono >= 1.2
+Requires:	dotnet-gtk-sharp2 >= 2.8
+Requires:	mono-csharp >= 1.2
 
 %description
 Application to collect various kind of Information (like notes,
