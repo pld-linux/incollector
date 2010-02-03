@@ -2,12 +2,13 @@ Summary:	Information collector
 Summary(pl.UTF-8):	Program do zbierania informacji
 Name:		incollector
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
 # Source0-md5:	da510a279ebb5e8ebf9dbdcb2fc1cf18
 #Source1:	%{name}.desktop
+Patch0:		%{name}-locale.patch
 URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -15,10 +16,10 @@ BuildRequires:	dotnet-gtk-sharp2-devel
 BuildRequires:	mono-csharp
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Requires: 	mono >= 1.2
 Requires:	dotnet-gtk-sharp2 >= 2.8
+Requires:	mono >= 1.2
 Requires:	mono-csharp >= 1.2
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Application to collect various kind of Information (like notes,
@@ -36,6 +37,11 @@ przeglądać wpisy.
 %setup -q
 %{__perl} -pi -e 's#> Engine/Defines.cs \\#> Engine/Defines.cs#' src/Makefile.am
 %{__perl} -pi -e "s/lib/%{_lib}/" script.in
+
+# fix belarussian locale
+%patch0 -p1
+mv po/be{-,@}latin.po
+mv po/be{-,@}latin.gmo
 
 %build
 %{__aclocal}
