@@ -1,0 +1,11 @@
+--- incollector-1.0/configure.in~	2007-09-19 12:15:44.000000000 +0200
++++ incollector-1.0/configure.in	2010-02-04 01:32:25.000000000 +0100
+@@ -39,7 +39,7 @@
+ 
+ 
+ dnl Intl
+-ALL_LINGUAS="pl ca de es fr it ru bg cs be-latin pt ua"
++ALL_LINGUAS="pl ca de es fr it ru bg cs be@latin pt ua"
+ GETTEXT_PACKAGE=incollector
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
