@@ -12,6 +12,7 @@ URL:		http://www.incollector.devnull.pl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dotnet-gtk-sharp2-devel
+BuildRequires:	gettext-devel
 BuildRequires:	mono-csharp
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
