@@ -2,7 +2,7 @@ Summary:	Information collector
 Summary(pl.UTF-8):	Program do zbierania informacji
 Name:		incollector
 Version:	1.2
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://www.incollector.devnull.pl/download/sources/%{name}-%{version}.tar.gz
@@ -50,6 +50,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# ukrainian is uk
+mv $RPM_BUILD_ROOT/%{_datadir}/locale/u{a,k}
 
 %find_lang incollector
 
